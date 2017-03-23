@@ -111,20 +111,34 @@ while(1):
     parseInput(P_INPUT)
     if any(np.in1d(P_INPUT, GREETING_SET)):
         print(np.random.choice(GREETING_SET).title()+",",INFO_SET[0].title())
-    elif '?' in RAWINPUT:
+    if '?' in RAWINPUT:
         QUESTION = 1
-        if 'weather' in P_INPUT:
-            if 'in' in P_INPUT:
-                 WEATHERREQ[0] = P_INPUT[1+P_INPUT.tolist().index('in')]
-                 WEATHERREQ[1] = P_INPUT[2+P_INPUT.tolist().index('in')]
-            else:
-                print("BOT: In which city and states do you want to know the weather?")
-                SUBINPUT = input()
-                P_SUBINPUT = np.array(SUBINPUT.split(" "))
-                P_SUBINPUT = np.char.lower(P_SUBINPUT)
-                if P_SUBINPUT[0] == 'in':
-                     WEATHERREQ[0] = P_SUBINPUT[1]
-                     WEATHERREQ[1] = P_SUBINPUT[2]
+    if any(np.in1d(P_INPUT, INTERRO_SET)):
+        INTERRO_idx = np.where(np.in1d(P_INPUT,INTERRO_SET) == True)[0][0]
+        INTERRO = P_INPUT(INTERRO_idx)
+        QUESTION = 1
+        for idx in range(INTERRO_idx, len(P_INPUT)):
+            if
 
-            WEATHER = weatherReq(WEATHERREQ)
-            print("BOT: It is", WEATHER[1]+WEATHER[2]+', and', WEATHER[0], 'in', WEATHERREQ[0].title()+', '+WEATHERREQ[1].upper())
+
+
+
+
+
+
+
+        # if 'weather' in P_INPUT:
+        #     if 'in' in P_INPUT:
+        #          WEATHERREQ[0] = P_INPUT[1+P_INPUT.tolist().index('in')]
+        #          WEATHERREQ[1] = P_INPUT[2+P_INPUT.tolist().index('in')]
+        #     else:
+        #         print("BOT: In which city and states do you want to know the weather?")
+        #         SUBINPUT = input()
+        #         P_SUBINPUT = np.array(SUBINPUT.split(" "))
+        #         P_SUBINPUT = np.char.lower(P_SUBINPUT)
+        #         if P_SUBINPUT[0] == 'in':
+        #              WEATHERREQ[0] = P_SUBINPUT[1]
+        #              WEATHERREQ[1] = P_SUBINPUT[2]
+        #
+        #     WEATHER = weatherReq(WEATHERREQ)
+        #     print("BOT: It is", WEATHER[1]+WEATHER[2]+', and', WEATHER[0], 'in', WEATHERREQ[0].title()+', '+WEATHERREQ[1].upper())
