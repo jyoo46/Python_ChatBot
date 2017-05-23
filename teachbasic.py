@@ -1,11 +1,12 @@
 import numpy as np
 #INFO = [Name, Age, ...]
-INFO = np.array([None, None, None, None, None, None, None])
+INFO = np.array(["USER", None, None, None, None, None, None])
 GREETING = np.array(['hello', 'hi', 'hey', 'sup', 'yo'])
 NOUN = np.array(['name'])
 PRONOUN = np.array(['I', 'you', 'it'])
 VERB = np.array(['do'])
-BEVERB = np.array(['be', 'am', 'is', 'are'])
+QVERB = np.array(['do', 'did', 'does', 'can', 'could', 'will', 'would', 'may',])
+BEVERB = np.array(['be', 'am', 'is', 'was', 'are', 'were'])
 ADJ = np.array([])
 ADV = np.array([])
 PREP = np.array(['about'])
